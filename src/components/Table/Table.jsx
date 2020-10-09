@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Table.css";
 import TESTDATA from '../../TestData';
 import TableList from '../TableList/TableList'
 
 const Table = (props) => {
+    const [content, setContent] = useState("Loading...")
+
+    useEffect(() => {
+        setTimeout(() => setContent(<TableList contents={TESTDATA} />), 1000)
+    }, [])
     return (
         <div>
-            Table goes here
-            Loading...
             <h1>Records</h1>
-            <TableList contents={TESTDATA} title="Stuff" />
+            {content}
         </div>
     )
 }
