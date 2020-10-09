@@ -4,18 +4,23 @@ import TESTDATA from '../../TestData';
 import TableList from '../TableList/TableList';
 
 const Table = (props) => {
-    const [content, setContent] = useState("Loading...")
     const { filterFunc } = props;
-    const [data, setData] = useState(filterFunc(TESTDATA));
+    const [isLoading, setIsLoading] = useState(true);
+    const [data, setData] = useState();
 
     useEffect(() => {
-        setTimeout(() => setContent(<TableList contents={data} />), 1000)
-    }, [data])
+        const filteredData = filterFunc(TESTDATA);
+        setData(filteredData);
+    }, [filterFunc])
+
+    useEffect(() => {
+        setTimeout(() => setIsLoading(false), 1000)
+    }, [])
 
     return (
         <div>
             <h1>Records</h1>
-            {content}
+            {isLoading ? "Loading..." : <TableList contents={data} />}
         </div>
     )
 }
