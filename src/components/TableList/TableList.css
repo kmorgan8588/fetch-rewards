@@ -1,0 +1,18 @@
+.Table {
+    font-family: sans-serif;
+}
+
+.Table th, td {
+    padding: .25em .5em;
+    text-align: left;
+    
+}
+
+.Table td {
+    background-color: #eee;
+    color: black;
+}
+
+.Table th {
+    background-color: #009;
+}
