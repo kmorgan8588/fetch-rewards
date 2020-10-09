@@ -6,7 +6,7 @@ import queryFunc from '../../util/queryApi';
 
 
 const Table = (props) => {
-    const { filterFunc, url } = props;
+    const { filterFunc } = props;
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
@@ -19,9 +19,12 @@ const Table = (props) => {
     }, [filterFunc, data])
 
     useEffect(() => {
-        const unfilteredData = queryFunc(url);
-        setData(unfilteredData)
-    }, [url])
+        async function fetchData() {
+            const unfilteredData = await queryFunc('/hiring.json');
+            setData(unfilteredData)
+        }
+        fetchData()
+    }, [])
 
     useEffect(() => {
         const count = Math.ceil(filteredData.length / 10);
