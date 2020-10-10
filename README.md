@@ -1,4 +1,4 @@
-# Import environment note
+# Important environment note
 To avoid CORS errors, please set the environment variable HTTPS to true before running npm start
 In Windows Powershell:
 ### `($env:HTTPS = "true) -and (npm start)`
