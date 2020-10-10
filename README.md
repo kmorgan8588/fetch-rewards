@@ -1,3 +1,10 @@
+# Import environment note
+To avoid CORS errors, please set the environment variable HTTPS to true before running npm start
+In Windows Powershell:
+### `($env:HTTPS = "true) -and (npm start)`
+For other systems and terminals, please visit this [link](https://create-react-app.dev/docs/using-https-in-development/)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
