@@ -4,7 +4,8 @@ In Windows Powershell:
 ### `($env:HTTPS = "true) -and (npm start)`
 For other systems and terminals, please visit this [link](https://create-react-app.dev/docs/using-https-in-development/)
 
-
+![Image of 50 entries per page](./fetchExample1.png)
+![Image of 100 entries per page](./fetchExample2.png)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
