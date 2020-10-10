@@ -3,7 +3,10 @@ import './TableList.css';
 
 const TableList = (props) => {
     const { contents } = props;
-
+    //handle empty contents case and gives it an empty object so Object.keys() won't fail
+    if (contents.length === 0) {
+        contents.push({})
+    }
     return (
         <table className="Table">
             <tbody>
